@@ -44,6 +44,6 @@ jobs:
         if: steps.plan-destroy.outcome == 'failure'
         run: exit 1
   
-      - name: Terraform Apply
+      - name: Terraform Apply Destroy
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -input=false
+        run: terraform apply -destroy -auto-approve -input=false
